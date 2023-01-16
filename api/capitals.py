@@ -9,17 +9,17 @@ class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         s = self.path
 
-        print("To search by country, input 0.  To search by city, input 1,")
-        user_selection = input("> ")
+        # print("To search by country, input 0.  To search by city, input 1,")
+        # user_selection = input("> ")
 
-        if user_selection == 0:
-            print("Please enter the name of a country.")
-            country_name = input("> ")
-            s = self.path+f"?country={country_name}"
-        elif user_selection == 1:
-            print("Please enter the name of a capital.")
-            capital_name = input("> ")
-            s = self.path+f"?capital={capital_name}"
+        # if user_selection == 0:
+        #     print("Please enter the name of a country.")
+        #     country_name = input("> ")
+        #     s = self.path+f"?country={country_name}"
+        # elif user_selection == 1:
+        #     print("Please enter the name of a capital.")
+        #     capital_name = input("> ")
+        #     s = self.path+f"?capital={capital_name}"
         
         query_string = dict(parse_qsl(urlsplit(s).query))
 
