@@ -27,7 +27,7 @@ class handler(BaseHTTPRequestHandler):
             url = f"https://restcountries.com/v3.1/name/{query_string['country']}"
             r = requests.get(url)
             data = json.loads(r.text)
-            message = f'The capital of {query_string["country"].title()} is {data[0]["name"]["common"]}'
+            message = f'The capital of {query_string["country"].title()} is {str(data[0])["capital"]}'
 
         elif "capital" in query_string:
             url = f"https://restcountries.com/v3.1/capital/{query_string['capital']}"
