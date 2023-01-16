@@ -15,11 +15,11 @@ class handler(BaseHTTPRequestHandler):
         if user_selection == 0:
             print("Please enter the name of a country.")
             country_name = input("> ")
-            s = self.path+f"country={country_name}"
+            s = self.path+f"?country={country_name}"
         elif user_selection == 1:
             print("Please enter the name of a capital.")
             capital_name = input("> ")
-            s = self.path+f"capital={capital_name}"
+            s = self.path+f"?capital={capital_name}"
         
         query_string = dict(parse_qsl(urlsplit(s).query))
 
